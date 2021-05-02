@@ -27,7 +27,7 @@
    - [ ] 8.6. Ejemplo de acceso a la base de datos con Java y JDBC
 
 [link img]: https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20entidad%20relacion/QuevedoFest.png
-https://ibb.co/kBR80jC
+
 
    ## 1. Introducción:
 

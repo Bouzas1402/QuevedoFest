@@ -110,7 +110,7 @@
 
 
 ## 5.Consultas de la base de datos
-   - 5.1. Consultas más frecuentes:
+    - 5.1. Consultas más frecuentes:
    
 Nombre de los empleados que trabajan en los escenarios y en que escenario trabaja cada uno:
 

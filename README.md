@@ -70,7 +70,8 @@
          del departamento.
          
          Los empleados trabajaran en alguno de los escenarios o en algunos de los puestos de venta del festival, ademas guardaremos 
-         el nombre, el puesto y un telefono.
+         el nombre, el puesto y un telefono. Algunos empleados son voluntarios, que no cobran, pero si se les de una retribucion por
+         desplazamiento y otros conceptos.
 
          Los productos se venderan en los puestos de venta y guardaremos el precio de venta por unidad, la cantidad vendida y 
          el nombre del producto. 
@@ -445,3 +446,32 @@ INSERT INTO puesto_vende_productos VALUES (5,505),(5,510),(5,515),(5,520),(10,50
 (15,530),(15,535),(15,540);
 --
 ```
+
+
+## 5.Consultas de la base de datos
+   - 5.1. Consultas más frecuentes:
+   
+Nombre de los empleados que trabajan en los escenarios y en que escenario trabaja cada uno:
+
+```sql
+Select e.nombre, es.nombre_escenario FROM empleados e JOIN  escenarios es ON es.id = e.id_escenario_trabaja Order BY nombre_escenario DESC;
+```
+
+Nombre de los empleados que trabajan en los escenarios y en que escenario trabaja cada uno:
+```sql
+Select e.nombre, p.marca FROM empleados e JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja Order BY nombre_escenario DESC;
+```
+
+Cuantos empleados trabajan en cada escenario:
+```sql
+Select es.nombre_escenario, Count(e.*) FROM empleados e JOIN  escenarios es ON es.id = e.id_escenario_trabaja GROUP BY es.nombre_escenario Order BY nombre_escenario DESC;
+```
+
+Cuantos empleados trabajan para cada marca:
+```sql
+Select  p.marca, COUNT(e.nombre) FROM empleados e JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja GROUP BY p.marca Order BY p.marca DESC;
+```
+Voluntarios del festival:
+```
+Select e.nombre FROM empleados e WHERE puesto ilike 'voluntario' OR puesto ilike 'Organizador voluntariado';
+``` 

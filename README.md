@@ -133,6 +133,6 @@ Cuantos empleados trabajan para cada marca:
 Select  p.marca, COUNT(e.nombre) FROM empleados e JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja GROUP BY p.marca Order BY p.marca DESC;
 ```
 Voluntarios del festival:
-```
+```sql
 Select e.nombre FROM empleados e WHERE puesto ilike 'voluntario' OR puesto ilike 'Organizador voluntariado';
 ``` 

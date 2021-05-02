@@ -87,5 +87,5 @@
      - 2.2 Diagrama entidad relación:
 
 
-![Diagrama entidad relación]([Diagrama])
-[Diagrama]: https://ibb.co/kBR80jC
+![Diagrama entidad relación]([link img])
+

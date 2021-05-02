@@ -64,16 +64,18 @@
 
          De los alquileres guardaremos el concepto por el que hacemos el alquiler que sera el objeto alquilado.
          
-         De los asuntos legales el nombre, el bufete al que pertenece la especialidad legal que tiene y un telefono de contacto, ademas 
-         cada miembro contratado asesorara a distintos departamentos en funcion de su especialidad legal y las necesidades del departamento.
+         De los asuntos legales el nombre, el bufete al que pertenece la especialidad legal que tiene y un telefono de contacto, 
+         ademas cada miembro contratado asesorara a distintos departamentos en funcion de su especialidad legal y las necesidades 
+         del departamento.
          
          Los empleados trabajaran en alguno de los escenarios o en algunos de los puestos de venta del festival, ademas guardaremos 
          el nombre, el puesto y un telefono.
 
-         Los productos se venderan en los puestos de venta y guardaremos el precio de venta por unidad, la cantidad vendida y el nombre del producto. 
+         Los productos se venderan en los puestos de venta y guardaremos el precio de venta por unidad, la cantidad vendida y 
+         el nombre del producto. 
 
-         De las entradas guardaremos el precio de venta por entrada, el tipo de entrada que podra ser vip o normal, la cantidad de 
-         entradas vendidas y si es una entrada para 1 solo dia o para 2.
+         De las entradas guardaremos el precio de venta por entrada, el tipo de entrada que podra ser vip o normal, la cantidad 
+         de entradas vendidas y si es una entrada para 1 solo dia o para 2.
 
          De los sponsor y la publicidad la marca que se publicita y el tipo de publicidad contratada.
 

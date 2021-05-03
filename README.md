@@ -13,7 +13,7 @@
    - [x] 4.3. Carga de datos de prueba
 - [x] 5. Consultas de la base de datos
    - [x] 5.1. Consultas más frecuentes
-   - [x] 5.2. Consultas sencillas
+   - [x] 5.2. [Consultas sencillas](#sencillas)
    - [x] 5.3. Consultas de agregación y resumen
    - [x] 5.4. Consultas con subconsultas
 - [ ] 6. Vistas, secuencias e índices
@@ -86,9 +86,9 @@
 
          Todas las entidades llevaran un id identificativo.
 
-
-     - 2.2 Diagrama entidad relación:
 <a name="diagrama"></a>
+     - 2.2 Diagrama entidad relación:
+
 
 ![Diagrama entidad relación]([link img])
 
@@ -200,7 +200,7 @@ Mostrar los alquileres:
 ```sql
 SELECT * FROM alquileres;
 ```
-
+<a name="sencillas"></a>
     - 5.2 Consultas sencillas:
 Nombre, id y numero de los empleados:
 ```sql

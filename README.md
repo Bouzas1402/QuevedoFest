@@ -238,8 +238,17 @@ Los puestos de venta del festival:
 ```sql
 SELECT id,marca, numero_de_puestos FROM puestos_de_venta;
 ```
+Voluntarios del festival:
+```sql
+Select e.nombre FROM empleados e WHERE puesto ilike 'voluntario' OR puesto ilike 'Organizador voluntariado';
+``` 
+Lo que cobran y el total de la contratacion de artistas
+```sql
+SELECT a.nombre, b.coste FROM artista a
+JOIN balance b ON a.id = b.id;
+```
 
-        - 5.3. Consultas de agregacion y resumen:
+       - 5.3. Consultas de agregacion y resumen:
 
 ```sql
 

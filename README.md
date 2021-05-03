@@ -150,7 +150,9 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 
 ## 5.Consultas de la base de datos
 
-    - **5.1. Consultas más frecuentes:**
+   - **5.1. Consultas más frecuentes:**
+   
+   
 Los empleados, su puesto y en que escenario trabaja:
 ```sql
 SELECT e.id, e.nombre, e.puesto, es.nombre_escenario

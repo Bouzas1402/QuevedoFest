@@ -27,7 +27,7 @@
    - [ ] 8.6. Ejemplo de acceso a la base de datos con Java y JDBC
 
 [link img]: https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20entidad%20relacion/QuevedoFest.png
-
+[link img2]: https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20Crow%C2%B4s%20feet/crow%C2%B4s%20feet.png
 
    ## 1. Introducción:
 
@@ -138,7 +138,7 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 
 ## 4.Modelo fisico:
     - 4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)
-
+   ![Diagrama entidad relación]([link img2])
     - 4.2. Creación de tablas y otros objetos:
    [Archivo sql de la base de datos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/Base%20de%20datos%2C%20archivo%20sql/QuevedoFest2.sql)
 

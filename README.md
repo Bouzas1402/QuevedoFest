@@ -1,6 +1,6 @@
 # QuevedoFest
 
-- [] 1. Introducción
+- [ ] 1. Introducción
 - [x] 2. Modelo Conceptual
    - [x] 2.1. Especificaciones
    - [x] 2.2. Diagrama Entidad-Relación

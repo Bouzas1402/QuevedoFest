@@ -91,7 +91,7 @@
    - **2.2 Diagrama entidad relación:**
 
 
-![Diagrama entidad relación]([link img])
+    ![Diagrama entidad relación]([link img])
 
 ---
 <a name="logico"></a>

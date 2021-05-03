@@ -34,7 +34,7 @@
 ---
 
    ## 2. Modelo Conceptual:
-    - **2.1 Especificaciones:**
+   - **2.1 Especificaciones:**
 
          Se quiere hacer una base de datos para organizar el festival de musica QuevedoFest, queremos guardar la ubicacion 
          la capacidad y la pagina web del festival. 
@@ -95,8 +95,8 @@
 ---
    
 ## 3.Modelo logico
-     - **3.1. Modelo relacional:**
-     - **3.2. Normalización/Desnormalización:**
+   - **3.1. Modelo relacional:**
+   - **3.2. Normalización/Desnormalización:**
 
  QUEVEDOFEST (***id_quevedofest***(pk), nombre, ubiación, web)
  

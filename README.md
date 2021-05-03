@@ -151,25 +151,30 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 ## 5.Consultas de la base de datos
 
     - 5.1. Consultas más frecuentes:
-Los empleados, su puesto y en que escenario trabaja    
+Los empleados, su puesto y en que escenario trabaja:
+```sql
+SELECT e.id, e.nombre, e.puesto, es.nombre_escenario
+FROM empleados e 
+JOIN escenarios es ON e.id_escenario_trabaja = es.id
+ORDER BY es.nombre_escenario;
+```
+Los empleados, su puesto y para que marca trabajan en los puestos
+```sql
+SELECT e.id, e.nombre, e.puesto, p.marca
+FROM empleados e 
+JOIN puestos_de_venta p ON e.id_puesto_trabaja = p.id
+ORDER BY p.marca;
+```    
 El balance total de ingresos y gastos del festival:
 ```sql
 Select SUM(beneficio) AS Ingresos, SUM(coste) AS Gastos, (SUM(beneficio) - SUM(coste)) AS "Beneficio total" FROM balance;
 ```
-Los nombre de los artistas y donde y a que hora tocan:
+Los nombre de los artistas donde y a que hora tocan:
 ```sql
 SELECT e.nombre_escenario, a.nombre, ac.dia, ac.hora
 FROM escenarios e
 JOIN actuaciones ac ON ac.id_escenario = e.id
 JOIN artista a ON a.id = ac.id_artista;
-```
-Los salarios de los empleados por puesto:
-```sql
-SELECT e.puesto, SUM(e.*), SUM(b.coste) AS salarios
-FROM empleados e 
-JOIN balance b ON b.id = e.id
-GROUP BY ROLLUP (e.puesto)
-ORDER BY e.puesto; 
 ```
 Cuanto cobra cada empleado por puesto:
 ```sql
@@ -177,43 +182,61 @@ SELECT DISTINCT e.puesto, b.coste AS salario
 FROM empleados e 
 JOIN balance b ON b.id = e.id; 
 ```
-Id, nombre, puesto y donde trabaja cada empleado
+Cuantos empleados trabajan en cada puesto por marca: 
+```sql
+SELECT p.marca, COUNT(e.*) 
+FROM empleados e 
+JOIN puestos_de_venta p ON e.id_puesto_trabaja = p.id
+ORDER BY p.marca;
+```
+Cuantos empleados trabajan por escenario y en que puesto:
+```sql
+SELECT es.nombre_escenario, COUNT(e.*)
+FROM empleados e
+JOIN escenarios es ON es.id = e.id_escenario_trabaja
+GROUP BY es.nombre_escenario;
+```
 
     - 5.2 Consultas sencillas:
 Nombre, id y numero de los empleados:
 ```sql
 SELECT e.id, e.nombre, e.telefono FROM empleados e;
 ```
-Nombre y en que escenario trabaja cada empleado:
+Toda la informacion de asuntos legales:
 ```sql
-Select e.nombre, es.nombre_escenario FROM empleados e JOIN  escenarios es ON es.id = e.id_escenario_trabaja Order BY nombre_escenario DESC;
+SELECT * FROM asuntos_legales;
 ```
-
-Nombre de los empleados que trabajan en los escenarios y en que escenario trabaja cada uno:
+Medios invitados al festival:
 ```sql
-Select e.nombre, p.marca FROM empleados e JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja Order BY nombre_escenario DESC;
+SELECT id, medio, email  FROM invitaciones WHERE medio IS NOT NULL;
 ```
-
-Cuantos empleados trabajan en cada escenario:
+Famosos invitados al festival:
 ```sql
-Select es.nombre_escenario, Count(e.*) FROM empleados e JOIN  escenarios es ON es.id = e.id_escenario_trabaja GROUP BY es.nombre_escenario Order BY nombre_escenario DESC;
+SELECT id, nombre_invitado, email FROM invitaciones WHERE nombre_invitado IS NOT NULL;
 ```
-
-Cuantos empleados trabajan para cada marca:
+Productos que se venden en el festival:
 ```sql
-Select  p.marca, COUNT(e.nombre) FROM empleados e JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja GROUP BY p.marca Order BY p.marca DESC;
+SELECT id, nombre, precio_venta_unidad, cantidad AS "cantidad vendida" FROM productos;
 ```
-Vaoluntarios del festival:
+Id, nombre y numero de componentes de los artistas que trabajan en el festival:
 ```sql
-Select e.nombre FROM empleados e WHERE puesto ilike 'voluntario' OR puesto ilike 'Organizador voluntariado';
+SELECT id, nombre, num_componente FROM artista;
+```
+Entradas vendidas:
+```sql
+SELECT * FROM entradas; 
+```
+Sponsors del festival:
+```sql
+SELECT * FROM publicidad;
 ``` 
-La suma de los sueldos por puestos y el total de los puestos
+Los escenarios el festival:
 ```sql
-Select e.puesto, SUM(b.coste) AS salarios from empleados e JOIN balance b ON b.id = e.id GROUP by ROLLUP
-(e.puesto) ORDER BY e.puesto;
+SELECT id, nombre_escenario, capacidad FROM escenarios;
 ```
-Lo que cobran y el total de la contratacion de artistas
-```
+Los puestos de venta del festival:
+```sql
+SELECT id,marca, numero_de_puestos FROM puestos_de_venta;
 ```
 ## 6.Vistas, secuencias e índices
 

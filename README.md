@@ -214,7 +214,7 @@ Select e.puesto, SUM(b.coste) AS salarios from empleados e JOIN balance b ON b.i
 ```
 Lo que cobran y el total de la contratacion de artistas
 ```
-
+```
 ## 6.Vistas, secuencias e índices
 
 

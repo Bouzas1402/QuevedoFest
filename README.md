@@ -328,6 +328,8 @@ JOIN escenarios e ON e.id_departamento_organiza = d.id
 GROUP BY q.nombre;
 ```
 
+---
+
 ## 6.Vistas, secuencias e índices
 
 Vista para ver los sueldos de los empleados:

@@ -184,11 +184,9 @@ Nombre, id y numero de los empleados:
 ```sql
 SELECT e.id, e.nombre, e.telefono FROM empleados e;
 ```
-
+Nombre y en que escenario trabaja cada empleado:
 ```sql
 Select e.nombre, es.nombre_escenario FROM empleados e JOIN  escenarios es ON es.id = e.id_escenario_trabaja Order BY nombre_escenario DESC;
-
-GROUP BY CUBE (es.nombre_escenario) GROUP BY es.nombre_escenario
 ```
 
 Nombre de los empleados que trabajan en los escenarios y en que escenario trabaja cada uno:

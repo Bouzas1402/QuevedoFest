@@ -88,7 +88,7 @@
 
 
      - 2.2 Diagrama entidad relación:
-<a name="x">diagrama</a>
+<a name="diagrama"></a>
 
 ![Diagrama entidad relación]([link img])
 

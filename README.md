@@ -11,11 +11,11 @@
    - [x] 4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)
    - [x] 4.2. Creación de tablas y otros objetos
    - [x] 4.3. Carga de datos de prueba
-- [ ] 5. Consultas de la base de datos
-   - [ ] 5.1. Consultas más frecuentes
-   - [ ] 5.2. Consultas sencillas
-   - [ ] 5.3. Consultas de agregación y resumen
-   - [ ] 5.4. Consultas con subconsultas
+- [x] 5. Consultas de la base de datos
+   - [x] 5.1. Consultas más frecuentes
+   - [x] 5.2. Consultas sencillas
+   - [x] 5.3. Consultas de agregación y resumen
+   - [x] 5.4. Consultas con subconsultas
 - [ ] 6. Vistas, secuencias e índices
 - [ ] 7. Scripts en PL/pgSQL
 - [ ] 8. Extras

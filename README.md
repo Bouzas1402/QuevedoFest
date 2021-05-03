@@ -7,8 +7,8 @@
 - [x] 3. Modelo Lógico 
    - [x] 3.1. Modelo Relacional
    - [x] 3.2. Normalización/Desnormalización
-- [ ] 4. Modelo Físico
-   - [ ] 4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)
+- [x] 4. Modelo Físico
+   - [x] 4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)
    - [x] 4.2. Creación de tablas y otros objetos
    - [x] 4.3. Carga de datos de prueba
 - [ ] 5. Consultas de la base de datos

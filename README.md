@@ -238,6 +238,12 @@ Los puestos de venta del festival:
 ```sql
 SELECT id,marca, numero_de_puestos FROM puestos_de_venta;
 ```
+
+        - 5.3. Consultas de agregacion y resumen:
+
+```sql
+
+```
 ## 6.Vistas, secuencias e índices
 
 
@@ -249,6 +255,16 @@ SELECT e.nombre, b.coste FROM empleados e JOIN balance b ON b.id = e.id CREATE V
 Secuencia que lleva el valor de id balance:
 ```sql
 CREATE SEQUENCE nuevoBalance
+AS INT
 INCREMENT 5
-START 545;
+START 540;
+```
+Introducimos 3 empleados de seguridad mas al escenario QuevedoFest usando para la id en la tabla empleados y su registro correspondiente en balance la secuencia nuevoBalance:
+```sql
+INSERT INTO empleados VALUES (nextval('nuevoBalance'), 'Pedro Rodrigues Fuentes', 'seguridad', '600329312',5, null);
+INSERT INTO balance VALUES (currval('nuevoBalance'), 500, null, 5);
+INSERT INTO empleados VALUES (nextval('nuevoBalance'), 'Ana Vera Roma', 'seguridad', '692326712',5, null);
+INSERT INTO balance VALUES (currval('nuevoBalance'), 500, null, 5);
+INSERT INTO empleados VALUES (nextval('nuevoBalance'), 'Jose Antonio Casto Porro', 'seguridad', '678453545',5, null);
+INSERT INTO balance VALUES (currval('nuevoBalance'), 500, null, 5);
 ```

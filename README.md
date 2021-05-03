@@ -249,12 +249,59 @@ JOIN balance b ON a.id = b.id;
 ```
 
        - 5.3. Consultas de agregacion y resumen:
-
+Cuantos empleados hay en cada puesto
 ```sql
-
+SELECT puesto, COUNT(*) FROM empleados GROUP BY puesto;
 ```
-## 6.Vistas, secuencias e índices
+Cuantos empleados trabajan en cada escenario:
+```sql
+Select es.nombre_escenario, Count(e.*) 
+FROM empleados e 
+JOIN  escenarios es ON es.id = e.id_escenario_trabaja 
+GROUP BY es.nombre_escenario 
+Order BY nombre_escenario DESC;
+```
+Cuantos empleados trabajan para cada marca:
+```sql
+Select  p.marca, COUNT(e.nombre) 
+FROM empleados e 
+JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja 
+GROUP BY p.marca 
+Order BY p.marca DESC;
+```
+La suma de los sueldos por puestos y el total de los puestos
+```sql
+Select e.puesto, SUM(b.coste) AS salarios 
+from empleados e 
+JOIN balance b ON b.id = e.id 
+GROUP by ROLLUP (e.puesto) 
+ORDER BY e.puesto;
+```
+Total de productos vendidos en los puestros de venta:
+```sql
+SELECT SUM(p.cantidad), SUM(b.beneficio) FROM productos p
+JOIN balance b ON b.id = p.id;
+```
+El coste en salarios por puestos en todos los escenarios y en los escenarios por separado:
+```sql
+Select es.nombre_escenario, e.puesto, COUNT(e.nombre), SUM(b.coste) AS "coste en salarios"
+FROM empleados e
+JOIN  escenarios es ON es.id = e.id_escenario_trabaja
+JOIN balance b ON b.id = e.id
+GROUP BY GROUPING SETS ((es.nombre_escenario, e.puesto), (e.puesto))
+ORDER BY es.nombre_escenario, e.puesto;
+```
+El coste en salarios por puestos en todos los puestos de venta y en los puestos de venta por separado:
+```sql
+Select p.marca, e.puesto, COUNT(e.nombre),SUM(b.coste) AS "coste en salarios"
+FROM empleados e
+JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja
+JOIN balance b ON b.id = e.id
+GROUP BY GROUPING SETS ((p.marca, e.puesto), (e.puesto))
+ORDER BY p.marca, e.puesto;
+```
 
+## 6.Vistas, secuencias e índices
 
 Vista para ver los sueldos de los empleados:
 ```sql

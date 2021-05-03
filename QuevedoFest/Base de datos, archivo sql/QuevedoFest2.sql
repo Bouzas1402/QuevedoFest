@@ -133,8 +133,8 @@ INSERT INTO balance VALUES
 CREATE TABLE productos (
 id INT CONSTRAINT productos_pk PRIMARY KEY,
 nombre VARCHAR(20),
-cantidad INT,
 precio_venta_unidad NUMERIC,
+cantidad INT,
 CONSTRAINT balance_productos_fk FOREIGN KEY (id) REFERENCES balance (id)
 );
 --

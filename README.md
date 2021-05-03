@@ -149,12 +149,46 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 ---
 
 ## 5.Consultas de la base de datos
+
     - 5.1. Consultas más frecuentes:
-   
-Nombre de los empleados que trabajan en los escenarios y en que escenario trabaja cada uno:
+Los empleados, su puesto y en que escenario trabaja    
+El balance total de ingresos y gastos del festival:
+```sql
+Select SUM(beneficio) AS Ingresos, SUM(coste) AS Gastos, (SUM(beneficio) - SUM(coste)) AS "Beneficio total" FROM balance;
+```
+Los nombre de los artistas y donde y a que hora tocan:
+```sql
+SELECT e.nombre_escenario, a.nombre, ac.dia, ac.hora
+FROM escenarios e
+JOIN actuaciones ac ON ac.id_escenario = e.id
+JOIN artista a ON a.id = ac.id_artista;
+```
+Los salarios de los empleados por puesto:
+```sql
+SELECT e.puesto, SUM(e.*), SUM(b.coste) AS salarios
+FROM empleados e 
+JOIN balance b ON b.id = e.id
+GROUP BY ROLLUP (e.puesto)
+ORDER BY e.puesto; 
+```
+Cuanto cobra cada empleado por puesto:
+```sql
+SELECT DISTINCT e.puesto, b.coste AS salario
+FROM empleados e 
+JOIN balance b ON b.id = e.id; 
+```
+Id, nombre, puesto y donde trabaja cada empleado
+
+    - 5.2 Consultas sencillas:
+Nombre, id y numero de los empleados:
+```sql
+SELECT e.id, e.nombre, e.telefono FROM empleados e;
+```
 
 ```sql
 Select e.nombre, es.nombre_escenario FROM empleados e JOIN  escenarios es ON es.id = e.id_escenario_trabaja Order BY nombre_escenario DESC;
+
+GROUP BY CUBE (es.nombre_escenario) GROUP BY es.nombre_escenario
 ```
 
 Nombre de los empleados que trabajan en los escenarios y en que escenario trabaja cada uno:
@@ -171,7 +205,28 @@ Cuantos empleados trabajan para cada marca:
 ```sql
 Select  p.marca, COUNT(e.nombre) FROM empleados e JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja GROUP BY p.marca Order BY p.marca DESC;
 ```
-Voluntarios del festival:
+Vaoluntarios del festival:
 ```sql
 Select e.nombre FROM empleados e WHERE puesto ilike 'voluntario' OR puesto ilike 'Organizador voluntariado';
 ``` 
+La suma de los sueldos por puestos y el total de los puestos
+```sql
+Select e.puesto, SUM(b.coste) AS salarios from empleados e JOIN balance b ON b.id = e.id GROUP by ROLLUP
+(e.puesto) ORDER BY e.puesto;
+```
+Lo que cobran y el total de la contratacion de artistas
+```
+
+## 6.Vistas, secuencias e índices
+
+Vista para ver los sueldos de los empleados:
+```sql
+CREATE OR REPLACE VIEW nominas AS
+SELECT e.nombre, b.coste FROM empleados e JOIN balance b ON b.id = e.id CREATE VIEW;
+```
+Secuencia que lleva el valor de id balance:
+```sql
+CREATE SEQUENCE nuevoBalance
+INCREMENT 5
+START 545;
+```

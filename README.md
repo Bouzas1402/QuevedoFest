@@ -93,7 +93,7 @@
 ![Diagrama entidad relación]([link img])
 
 ---
-   
+<a name="logico"></a>
 ## 3.Modelo logico
    - **3.1. Modelo relacional:**
    - **3.2. Normalización/Desnormalización:**

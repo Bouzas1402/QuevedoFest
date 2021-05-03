@@ -1,22 +1,22 @@
 # QuevedoFest
 
-- [ ] 1. Introducción
+- [ ] 1. [Introducción](#introduccion)
 - [x] 2. Modelo Conceptual
-   - [x] 2.1. Especificaciones
-   - [x] 2.2. [Diagrama Entidad-Relación](#diagrama)
+   - [x] 2.1. [Especificaciones](#introduccion)
+   - [x] 2.2. [Diagrama Entidad-Relación](#logico)
 - [x] 3. Modelo Lógico 
-   - [x] 3.1. Modelo Relacional
-   - [x] 3.2. Normalización/Desnormalización
+   - [x] 3.1. [Modelo Relacional](#logico)
+   - [x] 3.2. [Normalización/Desnormalización](#logico)
 - [x] 4. Modelo Físico
-   - [x] 4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)
-   - [x] 4.2. Creación de tablas y otros objetos
-   - [x] 4.3. Carga de datos de prueba
+   - [x] 4.1. [Diagrama de base de datos (notación "Crow's feet" o IDEF1X)](#fisico)
+   - [x] 4.2. [Creación de tablas y otros objetos](#fisico)
+   - [x] 4.3. [Carga de datos de prueba](#fisico)
 - [x] 5. Consultas de la base de datos
-   - [x] 5.1. Consultas más frecuentes
+   - [x] 5.1. [Consultas más frecuentes](#fisico)
    - [x] 5.2. [Consultas sencillas](#sencillas)
-   - [x] 5.3. Consultas de agregación y resumen
-   - [x] 5.4. Consultas con subconsultas
-- [ ] 6. Vistas, secuencias e índices
+   - [x] 5.3. [Consultas de agregación y resumen](#agregacion)
+   - [x] 5.4. [Consultas con subconsultas](#subconsultas)
+- [ ] 6. [Vistas, secuencias e índices](#vistas)
 - [ ] 7. Scripts en PL/pgSQL
 - [ ] 8. Extras
    - [ ] 8.1. Cursores
@@ -28,7 +28,7 @@
 
 [link img]: https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20entidad%20relacion/QuevedoFest.png
 [link img2]: https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20Crow%C2%B4s%20feet/crow%C2%B4s%20feet.png
-
+<a name="introduccion"></a>
    ## 1. Introducción:
 
 ---
@@ -86,7 +86,7 @@
 
          Todas las entidades llevaran un id identificativo.
 
-<a name="diagrama"></a>
+<a name="relacion"></a>
      - 2.2 Diagrama entidad relación:
 
 
@@ -135,7 +135,7 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 [^2]: De la relacion terciaria entre empleados y puesto de ventas y escenarios hemos decidido no hacer una tabla transportar las claves de escenario y de puestos a la tabla empleado, aunque provoca valores nulos creemos que es mas comodo. 
 
 ---
-
+<a name="fisico"></a>
 ## 4.Modelo fisico:
     - 4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)
    ![Diagrama entidad relación]([link img2])
@@ -251,7 +251,7 @@ Lo que cobran y el total de la contratacion de artistas
 SELECT a.nombre, b.coste FROM artista a
 JOIN balance b ON a.id = b.id;
 ```
-
+<a name="agregacion"></a>
     - 5.3. Consultas de agregacion y resumen:
 Cuantos empleados hay en cada puesto
 ```sql
@@ -312,6 +312,7 @@ JOIN balance b ON b.id = e.id
 GROUP BY e.puesto, b.coste 
 HAVING coste > 50;
 ```
+<a name="subconsultas"></a>
     - 5.4. Consultas con subconsultas:
 Cual es el grupo que mas cobra:
 ```sql
@@ -329,7 +330,7 @@ GROUP BY q.nombre;
 ```
 
 ---
-
+<a name="vistas"></a>
 ## 6.Vistas, secuencias e índices
 
 Vista para ver los sueldos de los empleados:

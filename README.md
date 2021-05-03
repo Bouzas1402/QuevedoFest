@@ -217,6 +217,7 @@ Lo que cobran y el total de la contratacion de artistas
 
 ## 6.Vistas, secuencias e índices
 
+
 Vista para ver los sueldos de los empleados:
 ```sql
 CREATE OR REPLACE VIEW nominas AS

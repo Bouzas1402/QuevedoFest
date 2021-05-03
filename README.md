@@ -196,6 +196,10 @@ FROM empleados e
 JOIN escenarios es ON es.id = e.id_escenario_trabaja
 GROUP BY es.nombre_escenario;
 ```
+Mostrar los alquileres:
+```sql
+SELECT * FROM alquileres;
+```
 
     - 5.2 Consultas sencillas:
 Nombre, id y numero de los empleados:
@@ -248,7 +252,7 @@ SELECT a.nombre, b.coste FROM artista a
 JOIN balance b ON a.id = b.id;
 ```
 
-       - 5.3. Consultas de agregacion y resumen:
+    - 5.3. Consultas de agregacion y resumen:
 Cuantos empleados hay en cada puesto
 ```sql
 SELECT puesto, COUNT(*) FROM empleados GROUP BY puesto;
@@ -299,6 +303,29 @@ JOIN  puestos_de_venta p ON p.id = e.id_puesto_trabaja
 JOIN balance b ON b.id = e.id
 GROUP BY GROUPING SETS ((p.marca, e.puesto), (e.puesto))
 ORDER BY p.marca, e.puesto;
+```
+Trabajadores que no son voluntarios, que por tanto cobran mas de 50 euros:
+```sql
+SELECT e.puesto, COUNT(e.*) AS "numero de empleado", b.coste AS salario
+FROM empleados e 
+JOIN balance b ON b.id = e.id 
+GROUP BY e.puesto, b.coste 
+HAVING coste > 50;
+```
+    - 5.4. Consultas con subconsultas:
+Cual es el grupo que mas cobra:
+```sql
+SELECT a.id, a.nombre, b.coste 
+FROM artista a
+JOIN balance b ON b.id = a.id
+WHERE b.coste = (SELECT MAX(coste) FROM balance WHERE b.id = a.id);
+```
+Capacidad total del festival, sumando los dos escenarios:
+```sql
+SELECT q.nombre AS Festival, SUM(e.capacidad) FROM QuevedoFest q
+JOIN departamentos d ON d.id_quevedofest = q.id
+JOIN escenarios e ON e.id_departamento_organiza = d.id
+GROUP BY q.nombre;
 ```
 
 ## 6.Vistas, secuencias e índices

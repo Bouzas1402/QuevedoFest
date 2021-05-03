@@ -137,13 +137,14 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 ---
 <a name="fisico"></a>
 ## 4.Modelo fisico:
-    - **4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)**
+
+   - **4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)**
    ![Diagrama entidad relación]([link img2])
    
-    - **4.2. Creación de tablas y otros objetos:**
+   - **4.2. Creación de tablas y otros objetos:**
    [Archivo sql de la base de datos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/Base%20de%20datos%2C%20archivo%20sql/QuevedoFest2.sql)
 
-     - **4.3. Carga de datos de prueba:**
+   - **4.3. Carga de datos de prueba:**
    [Archivo sql de la base de datos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/Base%20de%20datos%2C%20archivo%20sql/QuevedoFest2.sql)
 
 ---
@@ -151,7 +152,6 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 ## 5.Consultas de la base de datos
 
    - **5.1. Consultas más frecuentes:**
-   
    
 Los empleados, su puesto y en que escenario trabaja:
 ```sql
@@ -203,7 +203,10 @@ Mostrar los alquileres:
 SELECT * FROM alquileres;
 ```
 <a name="sencillas"></a>
-    - **5.2 Consultas sencillas:**
+
+   - **5.2 Consultas sencillas:**
+
+
 Nombre, id y numero de los empleados:
 ```sql
 SELECT e.id, e.nombre, e.telefono FROM empleados e;
@@ -254,7 +257,10 @@ SELECT a.nombre, b.coste FROM artista a
 JOIN balance b ON a.id = b.id;
 ```
 <a name="agregacion"></a>
-    - 5.3. Consultas de agregacion y resumen:
+
+   - **5.3. Consultas de agregacion y resumen:**
+
+
 Cuantos empleados hay en cada puesto
 ```sql
 SELECT puesto, COUNT(*) FROM empleados GROUP BY puesto;
@@ -315,7 +321,7 @@ GROUP BY e.puesto, b.coste
 HAVING coste > 50;
 ```
 <a name="subconsultas"></a>
-    - **5.4. Consultas con subconsultas:**
+   - **5.4. Consultas con subconsultas:**
 Cual es el grupo que mas cobra:
 ```sql
 SELECT a.id, a.nombre, b.coste 

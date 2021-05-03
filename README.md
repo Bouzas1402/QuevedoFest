@@ -34,7 +34,7 @@
 ---
 
    ## 2. Modelo Conceptual:
-    - 2.1 Especificaciones:
+    - **2.1 Especificaciones:**
 
          Se quiere hacer una base de datos para organizar el festival de musica QuevedoFest, queremos guardar la ubicacion 
          la capacidad y la pagina web del festival. 
@@ -87,7 +87,7 @@
          Todas las entidades llevaran un id identificativo.
 
 <a name="relacion"></a>
-     - 2.2 Diagrama entidad relación:
+     - **2.2 Diagrama entidad relación:**
 
 
 ![Diagrama entidad relación]([link img])
@@ -95,8 +95,8 @@
 ---
    
 ## 3.Modelo logico
-     - 3.1. Modelo relacional:
-     - 3.2. Normalización/Desnormalización:
+     - **3.1. Modelo relacional:**
+     - **3.2. Normalización/Desnormalización:**
 
  QUEVEDOFEST (***id_quevedofest***(pk), nombre, ubiación, web)
  
@@ -137,20 +137,20 @@ ACTUACIONES (***id_escenario***(pk)(fk), ***id_artista***(pk)(fk), dia, hora)
 ---
 <a name="fisico"></a>
 ## 4.Modelo fisico:
-    - 4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)
+    - **4.1. Diagrama de base de datos (notación "Crow's feet" o IDEF1X)**
    ![Diagrama entidad relación]([link img2])
    
-    - 4.2. Creación de tablas y otros objetos:
+    - **4.2. Creación de tablas y otros objetos:**
    [Archivo sql de la base de datos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/Base%20de%20datos%2C%20archivo%20sql/QuevedoFest2.sql)
 
-     - 4.3. Carga de datos de prueba:
+     - **4.3. Carga de datos de prueba:**
    [Archivo sql de la base de datos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/Base%20de%20datos%2C%20archivo%20sql/QuevedoFest2.sql)
 
 ---
 
 ## 5.Consultas de la base de datos
 
-    - 5.1. Consultas más frecuentes:
+    - **5.1. Consultas más frecuentes:**
 Los empleados, su puesto y en que escenario trabaja:
 ```sql
 SELECT e.id, e.nombre, e.puesto, es.nombre_escenario
@@ -201,7 +201,7 @@ Mostrar los alquileres:
 SELECT * FROM alquileres;
 ```
 <a name="sencillas"></a>
-    - 5.2 Consultas sencillas:
+    - **5.2 Consultas sencillas:**
 Nombre, id y numero de los empleados:
 ```sql
 SELECT e.id, e.nombre, e.telefono FROM empleados e;
@@ -313,7 +313,7 @@ GROUP BY e.puesto, b.coste
 HAVING coste > 50;
 ```
 <a name="subconsultas"></a>
-    - 5.4. Consultas con subconsultas:
+    - **5.4. Consultas con subconsultas:**
 Cual es el grupo que mas cobra:
 ```sql
 SELECT a.id, a.nombre, b.coste 

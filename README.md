@@ -97,7 +97,7 @@
 
      - 3.2. Normalización/Desnormalización:
 
-     QUEVEDOFEST (<ins>id_quevedofest</ins>)
+     QUEVEDOFEST (***id_quevedofest***, )
 
 
 ## 4.Modelo fisico:

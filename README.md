@@ -3,7 +3,7 @@
 - [ ] 1. Introducción
 - [x] 2. Modelo Conceptual
    - [x] 2.1. Especificaciones
-   - [x] 2.2. Diagrama Entidad-Relación [link text](#x)
+   - [x] 2.2. [Diagrama Entidad-Relación](#diagrama)
 - [x] 3. Modelo Lógico 
    - [x] 3.1. Modelo Relacional
    - [x] 3.2. Normalización/Desnormalización
@@ -88,7 +88,7 @@
 
 
      - 2.2 Diagrama entidad relación:
-
+<a name="x">diagrama</a>
 
 ![Diagrama entidad relación]([link img])
 
@@ -353,4 +353,4 @@ INSERT INTO balance VALUES (currval('nuevoBalance'), 500, null, 5);
 INSERT INTO empleados VALUES (nextval('nuevoBalance'), 'Jose Antonio Casto Porro', 'seguridad', '678453545',5, null);
 INSERT INTO balance VALUES (currval('nuevoBalance'), 500, null, 5);
 ```
-<a name="x">link</a>
+

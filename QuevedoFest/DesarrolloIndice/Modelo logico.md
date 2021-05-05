@@ -1,7 +1,7 @@
 ## 3.Modelo logico
 #### 3.1. Modelo relacional:
 #### 3.2. Normalización/Desnormalización:
-
+---
  QUEVEDOFEST (***id_quevedofest***(pk), nombre, ubiación, web)
  
  DEPARTAMENTOS (***id_departamentos***(pk), nombre, competencias, _id_quevedofest_(fk))

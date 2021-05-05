@@ -2,8 +2,8 @@
 
 - [ ] 1. [**Introducción**](#introduccion)
 - [x] 2. **Modelo Conceptual**
-   - [x] 2.1. [Especificaciones](#introduccion)
-   - [x] 2.2. [Diagrama Entidad-Relación](#logico)
+   - [x] 2.1. [Especificaciones](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
+   - [x] 2.2. [Diagrama Entidad-Relación](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
 - [x] 3. **Modelo Lógico**
    - [x] 3.1. [Modelo Relacional](#logico)
    - [x] 3.2. [Normalización/Desnormalización](#logico)

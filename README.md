@@ -3,12 +3,12 @@
 - [ ] 1. [**Introducción**](#introduccion)
 - [x] 2. **Modelo Conceptual**
    - [x] 2.1. [Especificaciones](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
-   - [x] 2.2. [Diagrama Entidad-Relación](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
+   - [x] 2.2. [Diagrama Entidad-Relación](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md) [[link a img Diagrama]](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20entidad%20relacion/QuevedoFest.png)
 - [x] 3. **Modelo Lógico**
    - [x] 3.1. [Modelo Relacional](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20conceptual.md)
    - [x] 3.2. [Normalización/Desnormalización](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20conceptual.md)
 - [x] 4. **Modelo Físico**
-   - [x] 4.1. [Diagrama de base de datos (notación "Crow's feet" o IDEF1X)](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20f%C3%ADsico.md) [Link a imagen](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20Crow%C2%B4s%20feet/crow%C2%B4s%20feet.png)
+   - [x] 4.1. [Diagrama de base de datos (notación "Crow's feet" o IDEF1X)](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20f%C3%ADsico.md) [[Link a imagen]](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20Crow%C2%B4s%20feet/crow%C2%B4s%20feet.png)
    - [x] 4.2. [Creación de tablas y otros objetos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20f%C3%ADsico.md)
    - [x] 4.3. [Carga de datos de prueba](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20f%C3%ADsico.md)
 - [x] 5. **Consultas de la base de datos**
@@ -25,8 +25,3 @@
    - [x] 8.4. Especificaciones de pruebas en [formato features Gherkin (ver ejemplo)](features/admin-carteles.feature) 
    - [ ] 8.5. Diagrama de clases
    - [ ] 8.6. Ejemplo de acceso a la base de datos con Java y JDBC
-
-[link img]: https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20entidad%20relacion/QuevedoFest.png
-[link img2]: https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20Crow%C2%B4s%20feet/crow%C2%B4s%20feet.png
-<a name="introduccion"></a>
-  

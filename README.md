@@ -339,7 +339,6 @@ GROUP BY q.nombre;
 ```
 
 ---
-<a name="vistas"></a>
 ## 6.Vistas, secuencias e índices
 
 Vista para ver los sueldos de los empleados:

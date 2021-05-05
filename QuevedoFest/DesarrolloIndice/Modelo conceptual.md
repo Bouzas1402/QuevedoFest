@@ -54,7 +54,7 @@
 
 
 
-####2.2 Diagrama entidad relación:
+#### 2.2 Diagrama entidad relación:
 
 
 ![Diagrama entidad relación]([link img])

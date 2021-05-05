@@ -1,7 +1,8 @@
 
 ## 5.Consultas de la base de datos
 ---
-####5.1. Consultas más frecuentes:
+
+#### 5.1. Consultas más frecuentes:
    
 Los empleados, su puesto y en que escenario trabaja:
 ```sql
@@ -54,7 +55,7 @@ SELECT * FROM alquileres;
 ```
 ---
 
-####5.2 Consultas sencillas:
+#### 5.2 Consultas sencillas:
 
 
 Nombre, id y numero de los empleados:
@@ -108,7 +109,7 @@ JOIN balance b ON a.id = b.id;
 ```
 
 ---
-####5.3. Consultas de agregacion y resumen:
+#### 5.3. Consultas de agregacion y resumen:
 
 
 Cuantos empleados hay en cada puesto
@@ -171,7 +172,7 @@ GROUP BY e.puesto, b.coste
 HAVING coste > 50;
 ```
 ---
-####5.4. Consultas con subconsultas:
+#### 5.4. Consultas con subconsultas:
 Cual es el grupo que mas cobra:
 ```sql
 SELECT a.id, a.nombre, b.coste 

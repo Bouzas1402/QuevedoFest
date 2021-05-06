@@ -139,7 +139,7 @@ CONSTRAINT balance_productos_fk FOREIGN KEY (id) REFERENCES balance (id)
 );
 --
 INSERT INTO productos VALUES  
-(500,'Bebidas alcolicas',9,2500),(505,'Refrescos',3,700),(510,'Cerveza',7,1200),
+(500,'Bebidas alcoholicas',9,2500),(505,'Refrescos',3,700),(510,'Cerveza',7,1200),
 (515,'Hamburguesas',4,570),(520,'Pizzas',6,680),(525,'Gorras',10,170),
 (530,'Camisetas',17,450),(535,'Pulseras',3,900),(540,'Posters',10,355);
 

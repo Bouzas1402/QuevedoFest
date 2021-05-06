@@ -111,7 +111,10 @@ JOIN balance b ON a.id = b.id;
 ---
 #### 5.3. Consultas de agregacion y resumen:
 
-
+Invitaciones enviadas mostrando el nombre si es alguien famoso o indicando que es un medio de comunicacion:
+```sql
+SELECT id, email, coalesce(nombre_invitado, 'medio de comunicacion') AS "nombre invitado" FROM invitaciones;
+```
 Cuantos empleados hay en cada puesto
 ```sql
 SELECT puesto, COUNT(*) FROM empleados GROUP BY puesto;

@@ -190,3 +190,17 @@ JOIN departamentos d ON d.id_quevedofest = q.id
 JOIN escenarios e ON e.id_departamento_organiza = d.id
 GROUP BY q.nombre;
 ```
+Nombre y telefono al cual deberian llamar cada departamento en caso de tener algun problema legal:
+```sql
+SELECT d.nombre, al.nombre, al.telefono, al.especialidad 
+FROM asuntos_legales al 
+JOIN departamentos d ON d.id = al.id_departamento_asesora;
+```
+Empleados que venden alcohol:
+```sql
+SELECT e.nombre FROM empleados e 
+JOIN puestos_de_venta pdv ON pdv.id = e.id_puesto_trabaja 
+JOIN puesto_vende_productos pvp ON pvp.id_puesto = pdv.id 
+JOIN productos p ON p.id = pvp.id_producto
+WHERE p.nombre ILIKE 'Cerveza' OR p.nombre ILIKE 'Bebidas alcoholicas';
+```

@@ -1,6 +1,7 @@
 
 ##  7. Scripts en PL/pgSQL
---
+---
+
 Procedimeinto que muestra toda la informacion de todos los empleados:
 ```sql
 create or replace procedure empleados ()

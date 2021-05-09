@@ -16,12 +16,12 @@
    - [x] 5.2. [Consultas sencillas](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
    - [x] 5.3. [Consultas de agregación y resumen](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
    - [x] 5.4. [Consultas con subconsultas](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
-- [ ] 6. [**Vistas, secuencias e índices**](#vistas)
-- [ ] 7. **Scripts en PL/pgSQL**
+- [x] 6. [**Vistas, secuencias e índices**](https://github.com/Bouzas1402/QuevedoFest/edit/main/QuevedoFest/DesarrolloIndice/Vistas,%20secuencias%20e%20%C3%ADndices.md)
+- [x] 7. **Scripts en PL/pgSQL**
 - [ ] 8. **Extras**
    - [ ] 8.1. Cursores
    - [ ] 8.2. Prototipo de interfaz de usuario
    - [ ] 8.3. Plan de pruebas
-   - [x] 8.4. Especificaciones de pruebas en [formato features Gherkin (ver ejemplo)](features/admin-carteles.feature) 
+   - [ ] 8.4. Especificaciones de pruebas en [formato features Gherkin (ver ejemplo)](features/admin-carteles.feature) 
    - [ ] 8.5. Diagrama de clases
    - [ ] 8.6. Ejemplo de acceso a la base de datos con Java y JDBC

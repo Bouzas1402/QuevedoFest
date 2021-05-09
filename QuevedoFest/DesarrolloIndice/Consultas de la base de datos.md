@@ -40,7 +40,7 @@ Cuantos empleados trabajan en cada puesto por marca:
 SELECT p.marca, COUNT(e.*) 
 FROM empleados e 
 JOIN puestos_de_venta p ON e.id_puesto_trabaja = p.id
-ORDER BY p.marca;
+GROUP BY p.marca;
 ```
 Cuantos empleados trabajan por escenario y en que puesto:
 ```sql

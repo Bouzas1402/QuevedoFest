@@ -17,7 +17,7 @@
    - [x] 5.3. [Consultas de agregación y resumen](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
    - [x] 5.4. [Consultas con subconsultas](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
 - [x] 6. [**Vistas, secuencias e índices**](https://github.com/Bouzas1402/QuevedoFest/edit/main/QuevedoFest/DesarrolloIndice/Vistas,%20secuencias%20e%20%C3%ADndices.md)
-- [x] 7. **Scripts en PL/pgSQL**
+- [x] 7. [**Scripts en PL/pgSQL**](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Scripts%20en%20pgSQL.md)
 - [ ] 8. **Extras**
    - [ ] 8.1. Cursores
    - [ ] 8.2. Prototipo de interfaz de usuario

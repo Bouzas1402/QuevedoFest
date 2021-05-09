@@ -24,6 +24,26 @@ from escenarios e
 join actuaciones ac on ac.id_escenario = e.id 
 join artista a on a.id = ac.id_artista;
 ```
+Vista para ver la informacion de los empleados que trabajan en los escenarios:
+```sql
+create or replace view empleadosescenarios AS
+SELECT e.id, e.nombre, e.puesto, b.coste, es.nombre_escenario
+FROM empleados e 
+JOIN escenarios es ON e.id_escenario_trabaja = es.id
+JOIN balance b ON b.id = e.id
+GROUP BY e.id,es.nombre_escenario, b.coste
+ORDER BY e.puesto;
+```
+Vista para ver la informacion de los empleados que trabajan en los puestos de venta:
+```sql
+create or replace view empleadospuestos AS
+SELECT e.id, e.nombre, e.puesto, b.coste, p.marca
+FROM empleados e 
+JOIN puestos_de_venta p ON e.id_puesto_trabaja = p.id
+JOIN balance b ON b.id = e.id
+GROUP BY p.marca, e.id, b.coste
+ORDER BY e.puesto;
+```
 Secuencia que lleva la cuenta del id que comparten las tablas empleados, productos, artistas, asuntos legales, alquileres, publicidad y entradas
 con balance:
 ```sql

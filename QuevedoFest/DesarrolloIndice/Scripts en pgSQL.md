@@ -136,5 +136,82 @@ language plpgsql
  end;
  $$;
  ```
+ Procedimiento para cambiar de escenario a un trabajador:
+ ```sql
+ create or replace procedure cambiar_escenario (
+     p_id_empleado empleados.id%type   
+ )
+ language plpgsql
+ as
+ $$
+ declare
+ v_id_escenario empleados.id_escenario_trabaja%type;
+ v_empleado empleados.id%type;
+--
+begin
+Select id 
+into v_empleado
+FROM empleados
+WHERE id = p_id_empleado;
+ if not found then
+ raise notice 'No existe el empleado';
+ end if;
+ --
+Select id_escenario_trabaja
+into v_id_escenario
+FROM empleados
+WHERE id = p_id_empleado; 
+if found then
+case v_id_escenario
+when 5 then
+ update empleados 
+ set id_escenario_trabaja = 10
+ Where id = p_id_empleado;
+ commit;
+when 10 then
+ update empleados 
+ set id_escenario_trabaja = 5
+ Where id = p_id_empleado;
+ commit;
+end case;
+end if;
+ end;
+ $$;
+ ```
+Procedimiento para cambiar de puesto a un empleado:
+```sql
+ create or replace procedure cambiar_puesto (
+     p_id_empleado empleados.id%type,
+     p_marca puestos_de_venta.marca%type
+ )
+ language plpgsql
+ as
+ $$
+ declare
+ v_marca puestos_de_venta.marca%type;
+ v_id empleados.id%type;
+ v_id_puesto puestos_de_venta.id%type;
+ begin
+SELECT id FROM empleados
+into v_id
+WHERE id = p_id_empleado;
+if not found then
+raise notice 'El empleado % no existe', p_id_empleado;
+end if;
+--
+SELECT id FROM puestos_de_venta
+into v_id_puesto
+WHERE marca ilike p_marca;
+--
+update empleados
+SET id_puesto_trabaja = v_id_puesto
+WHERE id = p_id_empleado;
+commit;
+  exception       
+      when others then
+         raise exception 'Se ha producido en un error inesperado';
+ end;
+ $$;
+ ```
 
 

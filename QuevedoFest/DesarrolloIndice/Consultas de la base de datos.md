@@ -9,14 +9,14 @@ Los empleados, su puesto y en que escenario trabaja:
 SELECT e.id, e.nombre, e.puesto, es.nombre_escenario
 FROM empleados e 
 JOIN escenarios es ON e.id_escenario_trabaja = es.id
-ORDER BY es.nombre_escenario;
+GROUP BY es.nombre_escenario;
 ```
 Los empleados, su puesto y para que marca trabajan en los puestos
 ```sql
 SELECT e.id, e.nombre, e.puesto, p.marca
 FROM empleados e 
 JOIN puestos_de_venta p ON e.id_puesto_trabaja = p.id
-ORDER BY p.marca;
+GROUP BY p.marca;
 ```    
 El balance total de ingresos y gastos del festival:
 ```sql

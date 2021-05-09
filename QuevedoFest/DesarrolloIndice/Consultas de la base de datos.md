@@ -166,6 +166,8 @@ JOIN balance b ON b.id = e.id
 GROUP BY GROUPING SETS ((p.marca, e.puesto), (e.puesto))
 ORDER BY p.marca, e.puesto;
 ```
+---
+#### 5.4. Consultas con subconsultas:
 Trabajadores que no son voluntarios, que por tanto cobran mas de 50 euros:
 ```sql
 SELECT e.puesto, COUNT(e.*) AS "numero de empleado", b.coste AS salario
@@ -174,8 +176,6 @@ JOIN balance b ON b.id = e.id
 GROUP BY e.puesto, b.coste 
 HAVING coste > 50;
 ```
----
-#### 5.4. Consultas con subconsultas:
 Cual es el grupo que mas cobra:
 ```sql
 SELECT a.id, a.nombre, b.coste 

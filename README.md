@@ -19,7 +19,7 @@
 - [x] 6. [**Vistas, secuencias e índices**](https://github.com/Bouzas1402/QuevedoFest/edit/main/QuevedoFest/DesarrolloIndice/Vistas,%20secuencias%20e%20%C3%ADndices.md)
 - [x] 7. [**Scripts en PL/pgSQL**](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Scripts%20en%20pgSQL.md)
 - [ ] 8. **Extras**
-   - [ ] 8.1. Cursores
+   - [x] 8.1. [Cursores](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Extras.md)
    - [ ] 8.2. Prototipo de interfaz de usuario
    - [ ] 8.3. Plan de pruebas
    - [ ] 8.4. Especificaciones de pruebas en [formato features Gherkin (ver ejemplo)](features/admin-carteles.feature) 

@@ -253,8 +253,37 @@ insert into actuaciones values (v_hora_dia_antiguo.id_escenario,v_dia_hora_antig
 
  exception
       when no_data_found then 
-        raise notice 'El empleado % no existe', p_id_artista;
+        raise notice 'El artista % no existe', p_id_artista;
      when others then
+        raise exception 'Se ha producido en un error inesperado'; 
+end;
+$$;
+```
+Procedimiento para meter un id y ver el coste o el beneficio (si es coste saldra con - delante):
+```sql
+create or replace procedure gasto (p_id balance.id%type)
+language plpgsql
+as
+$$
+declare
+v_fila_balance balance%rowtype;
+begin
+select *
+into v_fila_balance
+from balance
+where id = p_id;
+if not found then
+raise notice 'No existe la entrada % en el balance', p_id;
+end if;
+--
+if (v_fila_balance.coste is null) then
+raise notice 'El beneficio de la entrada % es: %', p_id, v_fila_balance.beneficio;
+else  
+raise notice 'El coste de la entrada % es: -%', p_id, v_fila_balance.coste;
+end if;
+ exception
+      when no_data_found then 
+raise notice 'La entrada % no esta en el balance', p_id;     when others then
         raise exception 'Se ha producido en un error inesperado'; 
 end;
 $$;

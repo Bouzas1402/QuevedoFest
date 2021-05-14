@@ -213,5 +213,51 @@ commit;
  end;
  $$;
  ```
+ Procedimiento para cambiar de horario de una actuación entroduciendo un id de artista, un hora, un dia, y un id de escenario, se cambiara al antiguo horario la actuacion que habia en el horario que hemos cambiado:
+```sql
+create or replace procedure cambiar_actuacion (
+    p_id_artista actuaciones.id_artista%type,
+    p_hora actuaciones.hora%type,
+p_dia actuaciones.dia%type,
+p_id_escenario actuaciones.id_escenario%type
+)  
+language plpgsql
+as
+$$
+declare
+v_hora_dia_antiguo record;
+v_dia_hora_antiguo2 record;
+begin
+perform id 
+from artista
+where id = p_id_artista; 
+--
+perform hora,dia
+from actuaciones
+where dia = p_dia and hora = p_hora;
+--
+Select *
+into v_hora_dia_antiguo
+from actuaciones 
+WHERE id_artista = p_id_artista;
+--
+select * 
+into v_dia_hora_antiguo2 
+from actuaciones
+where hora = p_hora and dia = p_dia;
+--
+delete from actuaciones where id_artista = v_hora_dia_antiguo.id_artista;
+delete from actuaciones where id_artista = v_dia_hora_antiguo2.id_artista;
+insert into actuaciones values (v_dia_hora_antiguo2.id_escenario,v_hora_dia_antiguo.id_artista,v_dia_hora_antiguo2.dia,v_dia_hora_antiguo2.hora);
+insert into actuaciones values (v_hora_dia_antiguo.id_escenario,v_dia_hora_antiguo2.id_artista,v_hora_dia_antiguo.dia,v_hora_dia_antiguo.hora);
+
+ exception
+      when no_data_found then 
+        raise notice 'El empleado % no existe', p_id_artista;
+     when others then
+        raise exception 'Se ha producido en un error inesperado'; 
+end;
+$$;
+```
 
 

@@ -8,9 +8,9 @@
    - [x] 3.1. [Modelo Relacional](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20logico.md)
    - [x] 3.2. [Normalización/Desnormalización](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20logico.md)
 - [x] 4. **Modelo Físico**
-   - [x] 4.1. [Diagrama de base de datos (notación "Crow's feet" o IDEF1X)](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20logico.md) [[Link a imagen]](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20Crow%C2%B4s%20feet/crow%C2%B4s%20feet.png)
-   - [x] 4.2. [Creación de tablas y otros objetos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20logico.md)
-   - [x] 4.3. [Carga de datos de prueba](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20logico.md)
+   - [x] 4.1. [Diagrama de base de datos (notación "Crow's feet" o IDEF1X)](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20f%C3%ADsico.md) [[Link a imagen]](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20Crow%C2%B4s%20feet/crow%C2%B4s%20feet.png)
+   - [x] 4.2. [Creación de tablas y otros objetos](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20f%C3%ADsico.md)
+   - [x] 4.3. [Carga de datos de prueba](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20f%C3%ADsico.md)
 - [x] 5. **Consultas de la base de datos**
    - [x] 5.1. [Consultas más frecuentes](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)
    - [x] 5.2. [Consultas sencillas](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Consultas%20de%20la%20base%20de%20datos.md)

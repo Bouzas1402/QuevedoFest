@@ -288,5 +288,72 @@ raise notice 'La entrada % no esta en el balance', p_id;     when others then
 end;
 $$;
 ```
-
+Prodedimiento para sacar un informe detallado de gastos y beneficios:
+```sql
+create or replace procedure balance_detallado ()
+language plpgsql
+as
+$$
+declare
+v_beneficio_publicidad balance.beneficio%type;
+v_beneficio_entradas balance.beneficio%type;
+v_beneficio_productos balance.beneficio%type;
+--
+v_coste_artistas balance.coste%type;
+v_coste_abogados balance.coste%type;
+v_coste_empleados balance.coste%type;
+v_coste_alquileres balance.coste%type;
+--
+v_coste_total balance.coste%type;
+v_beneficio_total balance.beneficio%type;
+v_total balance.coste%type;
+begin
+select sum(b.beneficio) 
+into v_beneficio_publicidad
+from balance b JOIN publicidad p ON p.id = b.id;
+--
+select sum(b.beneficio)
+into v_beneficio_entradas
+from balance b JOIN entradas e ON e.id = b.id;
+--
+select sum(b.beneficio)
+into v_beneficio_productos
+from balance b JOIN productos p ON b.id = p.id;
+--
+select sum(b.coste)
+into v_coste_artistas
+from balance b 
+JOIN artista a ON a.id = b.id;
+--
+select sum(b.coste) 
+into v_coste_abogados a
+from balance b JOIN asuntos_legales a ON a.id = b.id;
+--
+select sum(b.coste)
+into v_coste_empleados 
+from balance b JOIN empleados e ON e.id = b.id;
+--
+select sum(b.coste)
+into v_coste_alquileres 
+from balance b JOIN alquileres a ON a.id = b.id;
+--
+raise notice 'El beneficio de los contratos de publicidad es: %', v_beneficio_publicidad;
+raise notice 'El beneficio por la venta de entradas es:       %', v_beneficio_entradas;
+raise notice 'El beneficio por la venta de productos es:      %', v_beneficio_productos;
+v_beneficio_total := v_beneficio_publicidad + v_beneficio_entradas + v_beneficio_productos;
+raise notice 'El beneficio total del festival es:             %', v_beneficio_total;
+raise notice '**********************************************************************';
+--
+raise notice 'El gasto en artistas es:                       -%', v_coste_artistas;
+raise notice 'El gasto en abogados es:                       -%', v_coste_abogados;
+raise notice 'El gasto en empleados es:                      -%', v_coste_empleados;
+raise notice 'El gasto de alquileres es:                     -%', v_coste_alquileres;
+v_coste_total := v_coste_artistas + v_coste_abogados + v_coste_empleados + v_coste_alquileres;
+raise notice 'El coste     total del festival es:            -%', v_coste_total;
+raise notice '**********************************************************************';
+v_total := v_beneficio_total - v_coste_total;
+raise notice 'El beneficio del festival despues de gastos es: %', v_total;
+end;
+$$;
+```
 

@@ -91,3 +91,52 @@ when no_data_found then
 end;
 $$; 
 ```
+Procedimiento con cursores para ver Los numeros de todos los empleados que tienen alguna tarea organizativa o de control (jefe seguridad, organizador voluntario o jefe puesto de venta): 
+```sql
+create or replace procedure empleados_con_responsabilidades()
+language plpgsql
+as
+$$
+declare
+v_tabla_empleado_escenario record;
+v_nombre_escenario escenarios.nombre_escenario%type;
+--
+v_tabla_empleado_puesto record;
+v_nombre_puesto puestos_de_venta.marca%type;
+--
+cur_escenarios cursor for
+select * from empleados 
+where puesto ilike 'organizador voluntariado' or puesto ilike 'jefe seguridad';
+--
+cur_puestos cursor for
+select * from empleados
+where puesto ilike 'jefe puesto de venta';
+--
+begin
+--
+open cur_escenarios;
+loop
+fetch cur_escenarios into v_tabla_empleado_escenario;
+exit when not found;
+select nombre_escenario
+into v_nombre_escenario
+from escenarios
+where id = v_tabla_empleado_escenario.id_escenario_trabaja;
+raise notice 'El empleado % con el puesto % trabaja en el escenario % su número es %',v_tabla_empleado_escenario.nombre, v_tabla_empleado_escenario.puesto, v_nombre_escenario, v_tabla_empleado_escenario.telefono;
+end loop;
+close cur_escenarios;
+--
+open cur_puestos;
+fetch cur_puestos into v_tabla_empleado_puesto;
+while (found) loop
+select marca
+into v_nombre_puesto
+from puestos_de_venta
+where id = v_tabla_empleado_puesto.id_puesto_trabaja;
+raise notice 'El empleado % con el puesto % trabaja en el puesto de venta % su número es %',v_tabla_empleado_puesto.nombre,v_tabla_empleado_puesto.puesto,v_nombre_puesto,v_tabla_empleado_puesto.telefono;
+fetch cur_puestos into v_tabla_empleado_puesto;
+end loop;
+close cur_puestos;
+end;
+$$;
+```

@@ -141,7 +141,11 @@ end;
 $$;
 ```
 
-** TRIGGER para guardar los empleados borrados: **
+----
+
+**TRIGGER para guardar los empleados borrados:**
+
+
 Secuencia para la tabla empleados_borrados
 ```sql
 CREATE SEQUENCE sec_empleados_borrados

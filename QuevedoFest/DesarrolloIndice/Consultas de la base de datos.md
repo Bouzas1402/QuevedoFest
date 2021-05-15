@@ -204,3 +204,10 @@ JOIN puesto_vende_productos pvp ON pvp.id_puesto = pdv.id
 JOIN productos p ON p.id = pvp.id_producto
 WHERE p.nombre ILIKE 'Cerveza' OR p.nombre ILIKE 'Bebidas alcoholicas';
 ```
+Que productos vende cada puesto de venta
+```sql
+Select p.nombre, p.precio_venta_unidad, pdv.marca 
+FROM productos p 
+JOIN puesto_vende_productos pvp ON pvp.id_producto = p.id
+JOIN puestos_de_venta pdv ON pdv.id = pvp.id_puesto;
+``` 

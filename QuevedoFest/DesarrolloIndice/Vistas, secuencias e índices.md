@@ -70,4 +70,9 @@ Indice para acceder a los nombres de los empleados:
 ```sql
 CREATE INDEX nombre_empleados_ix ON empleados(nombre);
 ```
+Indices para las columnas id_escenario_trabaja e id_puesto_trabaja ya que tienen muchos valores nulos:
+```sql
+CREATE INDEX empleado_escenario_ix ON empleados(id_escenario_trabaja);
+CREATE INDEX empleados_puesto_ix ON empleados(id_puesto_trabaja);
+```
 

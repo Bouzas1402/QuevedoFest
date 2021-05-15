@@ -140,3 +140,59 @@ close cur_puestos;
 end;
 $$;
 ```
+
+** TRIGGER para guardar los empleados borrados: **
+Secuencia para la tabla empleados_borrados
+```sql
+CREATE SEQUENCE sec_empleados_borrados
+increment 5
+start 5;
+```
+Tabla donde insertaremos los datos de los empleados que borremos
+```sql
+create table empleados_borrados (
+    id int CONSTRAINT empleados_borrados_pk PRIMARY KEY,
+    empleado_id int not null,
+    nombre_empleado varchar(50),
+    puesto_empleado varchar(50),
+    id_escenario_trabaja int,
+    id_puesto_trabaja int,
+    sueldo numeric,
+    fecha_cambio date,
+    usuario_cambia varchar(50)
+);
+```
+Funcion que llamara al trigger cuando se borre un empleado, copiara  los datos antiguos y la fecha de la operacion en la tabla empleados borrados y borrara tambien el registro de la tabla balance:
+```sql
+create or replace function guardar_antiguos_empleados()
+returns trigger
+language plpgsql
+as
+$$
+declare
+v_sueldo balance.coste%type;
+begin
+-- Guardamos el sueldo del empleado:
+select coste
+into v_sueldo
+from balance
+where id = old.id;
+-- insertamos los antiguos datos en la tabla empleados_borrados y borramos la entrada balance con su id:
+insert into empleados_borrados 
+(id, empleado_id, nombre_empleado, puesto_empleado, id_escenario_trabaja, id_puesto_trabaja,
+sueldo, fecha_cambio, usuario_cambia)
+values (nextval('sec_empleados_borrados'), old.id, old.nombre, old.puesto, old.id_escenario_trabaja, old.id_puesto_trabaja, v_sueldo, now(), user);
+delete from balance where id = old.id;
+return new;
+end;
+$$;
+```
+Trigger que se dispara antes de hacer delete en un empleado:
+````sql
+CREATE TRIGGER empleados_borrados 
+before delete
+on empleados 
+for each row 
+execute function guardar_antiguos_empleados();
+```
+

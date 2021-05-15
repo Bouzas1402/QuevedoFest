@@ -63,7 +63,7 @@ Cartel del festival:
  DAW Sonar         | Blink 182           |   2 | 22:30:00
  QuevedoFestSounds | Pereza              |   2 | 22:30:00
 ```
-# Nombre : Carlos Bouzas Álvaro
-# Curso : Daw1_a
-# Asignatura : Base de datos
+## Nombre : Carlos Bouzas Álvaro
+## Curso : Daw1_a
+## Asignatura : Base de datos
 <a name="final"></a>

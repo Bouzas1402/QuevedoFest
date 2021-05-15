@@ -65,5 +65,5 @@ Cartel del festival:
 ```
 # Nombre : Carlos Bouzas Álvaro
 # Curso : Daw1_a
-# Asignatura :Base de datos
+# Asignatura : Base de datos
 <a name="final"></a>

@@ -1,6 +1,6 @@
 # QuevedoFest
 
-- [ ] 1. [**Introducción**](#introduccion)
+- [x] 1. [**Introducción**](#introduccion)
 - [x] 2. **Modelo Conceptual**
    - [x] 2.1. [Especificaciones](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20conceptual.md)
    - [x] 2.2. [Diagrama Entidad-Relación](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20conceptual.md) --> [[link a img Diagrama]](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20entidad%20relacion/QuevedoFest.png)
@@ -25,3 +25,39 @@
    - [ ] 8.4. Especificaciones de pruebas en [formato features Gherkin (ver ejemplo)](features/admin-carteles.feature) 
    - [ ] 8.5. Diagrama de clases
    - [ ] 8.6. Ejemplo de acceso a la base de datos con Java y JDBC
+
+--
+
+# 1. Introducción:
+
+A continuación se desarrola el proyecto de una base de datos para el festival de música QuevedoFest, festival que se desarrollara en la comunidad de Madrid en el verano de 2021 con una gran variedad de grupos y estilos musicales. 
+Durante dos dias en dos escenarios diferentes con una capacidad total para 11.000 personas con puestos de venta de comida, bebida y merchandising del festival, con pases vip para uno o dos dias.
+Cartel del festival:
+```
+ nombre_escenario  |       nombre        | dia |   hora
+-------------------+---------------------+-----+----------
+ QuevedoFestSounds | Lendakaris muertos  |   1 | 18:00:00
+ QuevedoFestSounds | Ella baila sola     |   1 | 21:00:00
+ QuevedoFestSounds | Estopa              |   1 | 00:00:00
+ QuevedoFestSounds | Ayax y Prok         |   1 | 01:30:00
+ QuevedoFestSounds | L.A.M.O.D.A         |   2 | 18:00:00
+ QuevedoFestSounds | La Raiz             |   2 | 19:30:00
+ QuevedoFestSounds | Kase O              |   2 | 21:00:00
+ QuevedoFestSounds | Nator y Wor         |   2 | 01:30:00
+ DAW Sonar         | Cupido              |   1 | 18:00:00
+ DAW Sonar         | Extremoduro         |   1 | 19:30:00
+ DAW Sonar         | Veintiuno           |   1 | 21:00:00
+ DAW Sonar         | Amaral              |   1 | 22:30:00
+ DAW Sonar         | Celtas cortos       |   1 | 00:00:00
+ DAW Sonar         | La casa azul        |   1 | 01:30:00
+ DAW Sonar         | SFDK                |   2 | 18:00:00
+ DAW Sonar         | Los delincuentes    |   2 | 21:00:00
+ DAW Sonar         | Heroes del silencio |   2 | 00:00:00
+ DAW Sonar         | Vetusta Morla       |   2 | 01:30:00
+ DAW Sonar         | Dellafuente         |   2 | 19:30:00
+ QuevedoFestSounds | Don Patricio        |   1 | 19:30:00
+ QuevedoFestSounds | La polla records    |   2 | 00:00:00
+ QuevedoFestSounds | Rozalen             |   1 | 22:30:00
+ DAW Sonar         | Blink 182           |   2 | 22:30:00
+ QuevedoFestSounds | Pereza              |   2 | 22:30:00
+```

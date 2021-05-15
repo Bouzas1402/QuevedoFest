@@ -1,6 +1,6 @@
 # QuevedoFest
 
-- [x] 1. [**Introducción**](#introduccion)
+- [x] 1. [**Introducción**](#final)
 - [x] 2. **Modelo Conceptual**
    - [x] 2.1. [Especificaciones](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20conceptual.md)
    - [x] 2.2. [Diagrama Entidad-Relación](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/DesarrolloIndice/Modelo%20conceptual.md) --> [[link a img Diagrama]](https://github.com/Bouzas1402/QuevedoFest/blob/main/QuevedoFest/img%20Diagrama%20entidad%20relacion/QuevedoFest.png)
@@ -31,7 +31,9 @@
 # 1. Introducción:
 
 A continuación se desarrola el proyecto de una base de datos para el festival de música QuevedoFest, festival que se desarrollara en la comunidad de Madrid en el verano de 2021 con una gran variedad de grupos y estilos musicales. 
+
 Durante dos dias en dos escenarios diferentes con una capacidad total para 11.000 personas con puestos de venta de comida, bebida y merchandising del festival, con pases vip para uno o dos dias.
+
 Cartel del festival:
 ```
  nombre_escenario  |       nombre        | dia |   hora
@@ -61,3 +63,7 @@ Cartel del festival:
  DAW Sonar         | Blink 182           |   2 | 22:30:00
  QuevedoFestSounds | Pereza              |   2 | 22:30:00
 ```
+# Nombre : Carlos Bouzas Álvaro
+# Curso : Daw1_a
+# Asignatura :Base de datos
+<a name="final"></a>
